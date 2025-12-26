@@ -1,0 +1,19 @@
+plugins {
+    id 'io.quarkus' apply false
+}
+
+subprojects {
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    plugins.withType(JavaPlugin) {
+        dependencies {
+            implementation(enforcedPlatform(
+                    "io.quarkus.platform:quarkus-bom:${quarkusPlatformVersion}"
+            ))
+        }
+    }
+}

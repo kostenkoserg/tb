@@ -1,0 +1,19 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        mavenLocal()
+    }
+    plugins {
+        id "${quarkusPluginId}" version "${quarkusPluginVersion}"
+    }
+}
+
+rootProject.name = 'tradebeans'
+
+// Include only existing modules
+include ':gateway:gateway-api'
+include ':gateway:gateway-core'
+include ':provider:provider-api'
+include ':provider:provider-core'
+include ':provider:adapters:bloomberg'
