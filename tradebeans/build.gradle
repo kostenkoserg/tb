@@ -1,5 +1,5 @@
 plugins {
-    id 'io.quarkus' apply false
+    alias(libs.plugins.quarkus) apply false
 }
 
 subprojects {
@@ -9,11 +9,11 @@ subprojects {
         mavenLocal()
     }
 
-    plugins.withType(JavaPlugin) {
-        dependencies {
-            implementation(enforcedPlatform(
-                    "io.quarkus.platform:quarkus-bom:${quarkusPlatformVersion}"
-            ))
+    plugins.withType(JavaPlugin).tap {
+        configureEach {
+            dependencies {
+                implementation(enforcedPlatform(libs.quarkus.bom))
+            }
         }
     }
 }

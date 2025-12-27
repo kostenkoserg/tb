@@ -1,18 +1,15 @@
-apply plugin: "${quarkusPluginId}"
+plugins {
+    alias(libs.plugins.java)
+    alias(libs.plugins.quarkus)
+}
 
 dependencies {
     // Quarkus BOM
-    implementation enforcedPlatform("io.quarkus.platform:quarkus-bom:${quarkusPlatformVersion}")
+    implementation enforcedPlatform(libs.quarkus.bom)
 
     // Quarkus core dependencies
-    implementation 'io.quarkus:quarkus-arc'
+    implementation libs.quarkus.arc
 
     // Project dependencies
     implementation project(':provider:provider-api')
-
-    // HTTP client
-
-    // Test dependencies
-//    testImplementation 'io.quarkus:quarkus-junit5'
-//    testImplementation 'org.mockito:mockito-core:5.5.0'
 }

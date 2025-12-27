@@ -1,0 +1,18 @@
+[versions]
+quarkus = "3.30.4"
+jackson = "2.15.2"
+
+[libraries]
+quarkus-bom = { group = "io.quarkus.platform", name = "quarkus-bom", version.ref = "quarkus" }
+quarkus-arc = { group = "io.quarkus", name = "quarkus-arc" }
+quarkus-websockets = { group = "io.quarkus", name = "quarkus-websockets" }
+quarkus-jackson = { group = "io.quarkus", name = "quarkus-jackson" }
+quarkus-junit5 = { group = "io.quarkus", name = "quarkus-junit5" }
+rest-assured = { group = "io.rest-assured", name = "rest-assured" }
+jackson-annotations = { group = "com.fasterxml.jackson.core", name = "jackson-annotations", version.ref = "jackson" }
+jackson-databind = { group = "com.fasterxml.jackson.core", name = "jackson-databind", version.ref = "jackson" }
+
+[plugins]
+java = { id = "java" }
+java-library = { id = "java-library" }
+quarkus = { id = "io.quarkus", version.ref = "quarkus" }

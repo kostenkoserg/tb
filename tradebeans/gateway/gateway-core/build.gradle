@@ -1,14 +1,14 @@
 plugins {
-    id 'java'
-    id 'io.quarkus'
+    alias(libs.plugins.java)
+    alias(libs.plugins.quarkus)
 }
 
 dependencies {
     implementation project(':gateway:gateway-api')
-    implementation 'io.quarkus:quarkus-arc'
-    implementation 'io.quarkus:quarkus-websockets'
-    implementation 'io.quarkus:quarkus-jackson'
+    implementation libs.quarkus.arc
+    implementation libs.quarkus.websockets
+    implementation libs.quarkus.jackson
 
-    testImplementation 'io.quarkus:quarkus-junit5'
-    testImplementation 'io.rest-assured:rest-assured'
+    testImplementation libs.quarkus.junit5
+    testImplementation libs.rest.assured
 }
